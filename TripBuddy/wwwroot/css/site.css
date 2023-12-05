@@ -1,0 +1,66 @@
+html {
+  font-size: 14px;
+
+}
+*{
+    color:white;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 120px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1521410843026-323be9ead002?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    backdrop-filter: blur(2px);
+}
+.form-group {
+    width: 300px;
+    padding-bottom:10px;
+    color:white;
+}
+.footer{
+display:none;
+}
+.nav-link {
+    background: radial-gradient(circle, #38466361 0%, #011744 100%);
+    border-radius: 25px;
+}
+    .nav-link:hover {
+        background: radial-gradient(circle, #5889be 0%, #011744 100%);
+    }
+
+.form-label {
+    color: black;
+
+}
+.form-control{
+    background:#fefefe
+}
+select option{
+    color:black;
+}
+table {
+    border: 1px solid white;
+    width: 1000px;
+    background:#302c2c;
+}
+thead{
+    border:1px solid white;
+}
+td {
+    border: 1px solid white;
+    text-align:center;
+}
+th {
+    border: 1px solid white;
+    text-align:center;
+    width:auto;
+}

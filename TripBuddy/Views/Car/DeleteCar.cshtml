@@ -1,0 +1,60 @@
+﻿@using TripBuddy.Areas.Identity.Data
+@model IEnumerable<Car>
+<head>
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+@if (Model.Any())
+{
+    <form method="post" action="/Car/DeleteCar">
+        <table>
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>
+                        <a asp-action="DeleteCar" asp-route-sortOrder="Manufacturer_Desc">Manufacturer</a>
+                    </th>
+                    <th>
+                        <a asp-action="DeleteCar" asp-route-sortOrder="Model">Model</a>
+                    </th>
+                    <th>
+                        <a asp-action="DeleteCar" asp-route-sortOrder="FuelType">Fuel Type</a>
+                    </th>
+                    <th>
+                        <a asp-action="DeleteCar" asp-route-sortOrder="FuelConsumption">l/100km</a>
+                    </th>
+                    <th>
+                        <a asp-action="DeleteCar" asp-route-sortOrder="HorsePower">HP</a>
+                    </th>
+
+                    <!-- Add links for other properties as needed -->
+                    <!-- Add other table headers as needed -->
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            <input type="checkbox" name="selectedCars" value="@item.CarsID" />
+                        </td>
+                        <td>@item.Manufacturer</td>
+                        <td>@item.Model</td>
+                        <td>@item.FuelType</td>
+                        <td>@item.FuelConsumption</td>
+                        <td>@item.HorsePower</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <input type="hidden" name="sortOrder" value="@ViewData["SortOrder"]" />
+
+        <button type="submit">Delete Selected</button>
+    </form>
+
+}
+else
+{
+    <h1 style="text-align:center">There are no cars</h1>
+    <img src="https://i.ytimg.com/vi/nVJ6KcFYGyo/maxresdefault.jpg" />
+}
